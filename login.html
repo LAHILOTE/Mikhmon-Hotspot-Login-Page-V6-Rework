@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title id="title"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="theme-color" content="#3B5998" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+        $(if chap-id)
+        <form name="sendin" action="$(link-login-only)" method="post">
+            <input type="hidden" name="username" />
+            <input type="hidden" name="password" />
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+        </form>
+
+        <script type="text/javascript" src="md5.js"></script>
+        <script type="text/javascript">
+            function doLogin() {
+                document.sendin.username.value = document.login.username.value;
+                document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                    '$(chap-challenge)');
+                document.sendin.submit();
+                return false;
+            }
+        </script>
+        $(endif)
+<div class="cloud">
+                <ul class="ul">
+                    <li class="li"></li>
+                    <li class="li"></li>
+                    <li class="li"></li>
+                    <li class="li"></li>
+                    </ul>         
+            </div>
+			
+            <div id="main" class="main">
+			<div class="box">
+			<img width="300px" src="img/logo.png">
+			</div>
+			<h3 style="font-weight:bold;">USER LOGIN</h3>
+			<marquee style="font-weight:bold;border-top:2px dashed #fff;">Selamat datang di hotspot kami, nikmati internetan sepuasnya tanpa batasan kuota seharian.</marquee>
+            
+                <div class="box">
+                <button id="btnvrc" class="small-button" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i> Voucher</button>
+                <button id="btnmem" class="small-button" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i> Member</button>
+                <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i> QR
+                    Code</button>
+            </div>
+            <div class="box" id="infologin">
+			</div>
+            <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                $(endif)>
+                <input type="hidden" name="dst" value="$(link-orig)" />
+                <input type="hidden" name="popup" value="true" />
+                <input class="username" name="username" type="text" value="$(username)" />
+                <input class="password" name="password" placeholder="Password" type="hidden" />
+
+                <button class="button w-12 bg-template bg-gradient btn-md pd-5" type="submit"><i class="icon icon-login  ">&#xe803;</i> LOGIN</button>
+			</form>
+
+            $(if trial == 'yes')
+			<button class="button w-12 bg-template bg-gradient btn-md pd-5" type="submit"><i class="icon icon-login  ">&#xe803;</i><a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"> Login</a></button>>
+            <div class="box">Coba gratis <a style="text-decoration: underline; color:#fff;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik
+                    di sini</a></div>
+            $(endif)
+$(if error)
+          <div style="color:#DF1A23; font-weight:bold; margin-bottom:5px;" >
+            <script type="text/javascript">
+              var error = "$(error)";
+              var error1 = "user $(username) has reached uptime limit";
+              var error2 = "invalid password";
+              var error3 = "no valid profile found";
+              var error4 = "user &lt;$(username)&gt; not found";
+              var error5 = "no more sessions are allowed for user $(username)";
+              var error6 = "session limit reached ($(error-orig))";
+              var error7 = "web browser did not send challenge response (try again, enable JavaScript)";
+              var error8 = "invalid username or password";
+              var error9 = "user $(username) is not allowed to log in from this MAC address";
+              var error10 = "simultaneous session limit reached";
+              var error11 = "user $(username) has reached traffic limit";
+              var error12 = "uptime limit reached";
+              var error13 = "invalid Calling-Station-Id";
+
+
+
+              if (error == error1) {
+                window.location.href = "expired.html";
+              } else if (error == error2) {
+                window.location.href = "invalid.html";
+              } else if (error == error3) {
+                window.location.href = "notfound.html";
+              } else if (error == error4) {
+                window.location.href = "notfound.html";
+              } else if (error == error5) {
+                window.location.href = "terpakai.html";
+              } else if (error == error6) {
+                window.location.href = "terpakai.html";
+              } else if (error == error7) {
+                window.location.href = "browser.html";
+              } else if (error == error8) {
+                window.location.href = "invalid.html";
+              } else if (error == error9) {
+                window.location.href = "exmac.html";
+              } else if (error == error10) {
+                window.location.href = "terpakai.html";
+              } else if (error == error11) {
+                window.location.href = "kuota.html";
+              } else if (error == error12) {
+                window.location.href = "expired.html";
+              } else if (error == error13) {
+                window.location.href = "calling.html";
+              } else {
+                document.write("$(error)");
+              }
+            </script>
+          </div>
+          $(endif) 
+
+          <div class="box">
+			<a style="font-weight:bold;color:#fff;" href="https://www.facebook.com/i.sirait93">Hotspot Voucher | &copy; Tanjung Balai</a><br />
+			<i style="font-weight:bold;color:#fff;" href="https://laksa19.github.io">Copyright&copy; 2020 Mikhmon</i>
+			
+			</div>
+			<br />
+			<div class="box">
+                <button id="btnvrc" class="small-button2" onclick="window.location='harga.html';"> HARGA PAKET</button>
+                <button id="btnvrc" class="small-button2" onclick="window.location='support.html';"> SUPPORT</button>
+                
+            
+		  </div> 
+		  <br />
+       <script type="text/javascript">
+var hostname = window.location.hostname;
+document.getElementById('title').innerHTML = hostname  + " > login";
+
+document.login.username.focus();
+
+var infologin = document.getElementById('infologin');
+infologin.innerHTML = "<b>Masukkan Kode Voucher Pada Kolom di Bawah kemudian klik login.</b>";
+
+// login page 2 mode by Laksamadi Guko
+var username = document.login.username;
+var password = document.login.password;
+
+username.placeholder = "Kode Voucher";
+
+// set password = username
+function setpass() {
+    var user = username.value
+    //user = user.toLowerCase();
+    username.value = user;
+    password.value = user;
+}
+
+username.onkeyup = setpass;
+
+// change to voucher mode
+function voucher() {
+    username.focus();
+    username.onkeyup = setpass;
+    username.placeholder = "Kode Voucher";
+    username.style = "border-radius:50px;"
+    password.type = "hidden";
+    infologin.innerHTML = "Masukkan Kode Voucher kemudian klik login.";
+}
+
+// change to member mode
+function member() {
+    username.focus();
+    username.onkeyup = "";
+    username.placeholder = "Username";
+    username.style = "border-radius:50px 50px 0px 0px;"
+    password.type = "password";
+    infologin.innerHTML = "<b>Input Username dan Password Member Anda dan Klik Login.</b>";
+}
+</script>
+
+</body>
+
+</html>
