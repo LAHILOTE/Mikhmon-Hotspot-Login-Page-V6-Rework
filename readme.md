@@ -1,11 +1,12 @@
 ## Persiapan Instalasi
 
-h2 Setting NTP Server di SNTP Client MikroTik
+<h4> Setting NTP Server di SNTP Client MikroTik</h4>
+
 ```
 System -> SNTP Client
 ```
 
-<h4> List NTP Server </h4>
+<h6> List NTP Server </h6>
 <ul>
   <li>id.pool.ntp.org</li>
   <li>time.google.com</li>
@@ -13,14 +14,16 @@ System -> SNTP Client
 
 ![Seting NTP Server](https://laksa19.github.io/img/sntp-client.jpg)
 
-## Membuat login Member menjadi default
+<h4> Membuat login Member menjadi default </h4>
 Edit file login.html di baris 14 menjadi 
+
 ```
 <body onload="member();">
 ```
 
-## Input otomatis huruf kecil (auto lowercase) mode voucher dan member
+<h4> Input otomatis huruf kecil (auto lowercase) mode voucher dan member </h4>
 Edit file login.html mulai baris 120 -> 148
+
 ```
 // set password = username
 function setpass(){
@@ -50,7 +53,9 @@ function member(){
 
 
 ```
+
 menjadi
+
 ```
 //set lowercase
 function setlower(){
@@ -91,13 +96,16 @@ function member(){
 //-->
 
 ```
-## Fitur QR Code Scanner
+
+<h4> Fitur QR Code Scanner </h4>
 
 Untuk menggunakan fitur QR CODE SCANNER Anda perlu menambahkan script berikut di MikroTik via Terminal.
+
 ```
 /ip hotspot walled-garden ip
 
 add action=accept comment="Mikhmon QR Code Scanner" disabled=no dst-host=laksa19.github.io
 
 ```
+
 Centang HTTP PAP di hotspot server profile.
