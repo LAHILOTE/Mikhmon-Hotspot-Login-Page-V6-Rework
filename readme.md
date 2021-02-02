@@ -1,6 +1,6 @@
 ## Persiapan Instalasi
 
-<h4> Setting NTP Server di SNTP Client MikroTik</h4>
+#### Setting NTP Server di SNTP Client MikroTik
 
 ```
 System -> SNTP Client
