@@ -1,3 +1,17 @@
+## Persiapan Instalasi
+
+h2 Setting NTP Server di SNTP Client MikroTik
+```
+System -> SNTP Client
+```
+
+<h4> List NTP Server </h4>
+<ul>
+  <li>id.pool.ntp.org</li>
+  <li>time.google.com</li>
+ </ul>
+
+![Seting NTP Server](https://laksa19.github.io/img/sntp-client.jpg)
 
 ## Membuat login Member menjadi default
 Edit file login.html di baris 14 menjadi 
