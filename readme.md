@@ -109,3 +109,4 @@ add action=accept comment="Mikhmon QR Code Scanner" disabled=no dst-host=laksa19
 ```
 
 Centang HTTP PAP di hotspot server profile.
+![Seting QR Code](https://laksa19.github.io/img/myqr-http-pap.png)
